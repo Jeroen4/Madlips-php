@@ -21,7 +21,7 @@
     <div class="body-content">
       <h1>Er heerst paniek</h1>
 
-      <form  action="index.php" method="post" id="content">
+      <form  action="index.php" method="post" id="content" autocomplete="off">
         <p><label>Welk dier zou je nooit als huisdier willen hebben?</label><input type="text" name="pet" value=""><span id="star">*</span></p>
         <p><label>Wie is de belangrijkste persoon in je leven?</label><input type="text" name="MVP" value=""><span id="star">*</span></p>
         <p><label>In welk land zou je willen leven?</label><input type="text" name="country" value=""><span id="star">*</span></p>
