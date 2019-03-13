@@ -21,7 +21,7 @@
     <div class="body-content">
       <h1>Er heerst paniek</h1>
 
-      <form  action="paniekResult.php" method="post" id="content">
+      <form  action="index.php" method="post" id="content">
         <p><label>Welk dier zou je nooit als huisdier willen hebben?</label><input type="text" name="pet" value=""><span id="star">*</span></p>
         <p><label>Wie is de belangrijkste persoon in je leven?</label><input type="text" name="MVP" value=""><span id="star">*</span></p>
         <p><label>In welk land zou je willen leven?</label><input type="text" name="country" value=""><span id="star">*</span></p>
@@ -31,26 +31,17 @@
         <p><label>Als je €100.000,- had wat zou je dan kopen?</label><input type="text" name="money" value=""><span id="star">*</span></p>
         <p><label>Wat is je favoriete bezigheid?</label><input type="text" name="occupy" value=""><span id="star">*</span></p>
 
-        <button type="submit" name="button">Versturen</button>
+        <button type="submit" name="button" onclick="">Versturen</button><?php myfnc();?>
       <?php
-        if($_POST)
-        {
-            if(empty($POST['pet']))
-                echo '<font color="red">Please enter your name.</font>';
-            if(empty($POST['MVP']))
-                echo '<font color="red">Please enter your email.</font>';
-            if(empty($POST['country']))
-                echo '<font color="red">Please enter your age.</font>';
-            if(empty($POST['bored']))
-                echo '<font color="red">Please enter your age.</font>';
-            if(empty($POST['toy']))
-                echo '<font color="red">Please enter your age.</font>';
-            if(empty($POST['teacher']))
-                echo '<font color="red">Please enter your age.</font>';
-            if(empty($POST['money']))
-                echo '<font color="red">Please enter your age.</font>';
-            if(empty($POST['occupy']))
-                echo '<font color="red">Please enter your age.</font>';
+        function myfnc(){
+        if($_POST){   
+            if(empty($_POST["pet"])||empty($_POST["MVP"])||empty($_POST["country"])||empty($_POST["bored"])||empty($_POST["toy"])||empty($_POST["teacher"])||empty($_POST["money"])||empty($_POST["occupy"])){
+              print '<script type="text/javascript">alert("Alle velden zijn verplicht")</script>';
+            }
+            else {
+              header("location:paniekResult.php?pet=".$_POST["pet"]."&MVP=".$_POST["MVP"]. "&country=".$_POST["country"]. "&bored=".$_POST["bored"]. "&toy=".$_POST["toy"]. "&teacher=".$_POST["teacher"]. "&money=".$_POST["money"]. "&occupy=".$_POST["occupy"]);
+            }   
+          } 
         }
     ?>
       </form>
