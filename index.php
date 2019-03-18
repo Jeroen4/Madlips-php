@@ -33,6 +33,7 @@
 
         <button type="submit" name="button" onclick="">Versturen</button><?php myfnc();?>
       <?php
+
         function myfnc(){
         if($_POST){   
             if(empty($_POST["pet"])||empty($_POST["MVP"])||empty($_POST["country"])||empty($_POST["bored"])||empty($_POST["toy"])||empty($_POST["teacher"])||empty($_POST["money"])||empty($_POST["occupy"])){
